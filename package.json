@@ -1,0 +1,22 @@
+{
+  "name": "home_assistant_moon",
+  "version": "1.0.0",
+  "description": "Phases of the moon for home assistant",
+  "main": "moon.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/jeremyhamm/home_assistant_moon.git"
+  },
+  "author": "Jeremy Hamm",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/jeremyhamm/home_assistant_moon/issues"
+  },
+  "homepage": "https://github.com/jeremyhamm/home_assistant_moon#readme",
+  "dependencies": {
+    "dayjs": "^1.8.35"
+  }
+}
