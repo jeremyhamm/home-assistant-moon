@@ -1,13 +1,5 @@
 import "https://unpkg.com/dayjs@1.8.21/dayjs.min.js";
 
-const loadCSS = (url) => {
-  const link = document.createElement("link");
-  link.type = "text/css";
-  link.rel = "stylesheet";
-  link.href = url;
-  document.head.appendChild(link);
-}
-
 class MoonPhasesCard {
   static get properties() {
     return {
@@ -34,12 +26,6 @@ class MoonPhasesCard {
   // distribute all cards over the available columns.
   getCardSize() {
     return this.config.entities.length + 1;
-  }
-
-  _toggle(state) {
-    this.hass.callService("homeassistant", "toggle", {
-      entity_id: state.entity_id
-    });
   }
 
   static get styles() {
