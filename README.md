@@ -1,2 +1,2 @@
-# home_assistant_moon
-Phases of the moon for home assistant
+# Home Assistant Moon
+Custom card for the current phase of the moon
