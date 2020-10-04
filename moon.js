@@ -87,13 +87,7 @@ const getMoonPhase = (year, month, day) => {
 class MoonPhasesCard extends HTMLElement {
     set hass(hass) {
         if (!this.content) {
-            const card = document.createElement('ha-card');
-            card.header = phase.name;
-            this.content = document.createElement('div');
-            this.content.style.padding = '0 16px 16px';
-            card.appendChild(this.content);
-            this.appendChild(card);
-      
+            // Get current moon phase
             const now = new Date();
             const year = now.getFullYear();
             const month = now.getMonth() + 1;
@@ -101,6 +95,14 @@ class MoonPhasesCard extends HTMLElement {
             const phase = getMoonPhase(year, month, day);
             
             console.log(`Current phase - ${phase.name} 🌙`);
+            
+            // Render card
+            const card = document.createElement('ha-card');
+            card.header = phase.name;
+            this.content = document.createElement('div');
+            this.content.style.padding = '0 16px 16px';
+            card.appendChild(this.content);
+            this.appendChild(card);
             
             this.content.innerHTML = `
                 <img src="/local/moon-phases/images/${phase.id}.png">
