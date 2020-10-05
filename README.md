@@ -1,6 +1,12 @@
 # Moon Card 🌙
 Custom card for displaying the current phase of the moon in [Home Assistant](https://www.home-assistant.io). This card uses the [Sun Entity](https://www.home-assistant.io/integrations/sun/) to determine the background color of the card.
 
+#### When sun is above horizon
+![Day example](/example/moon-day-example.png)
+
+#### When sun is below horizon
+![Night example](/example/moon-night-example.png)
+
 ---
 ## Installation
 
@@ -24,12 +30,3 @@ entity | string | **Required** | `sun.sun`
 #### Example
     type: 'custom:moon-phases'
     entity: sun.sun
-
----
-## Examples
-
-#### When sun is above horizon
-![Day example](/example/moon-day-example.png)
-
-#### When sun is below horizon
-![Night example](/example/moon-night-example.png)
