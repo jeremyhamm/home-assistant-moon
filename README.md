@@ -14,11 +14,11 @@ Custom card for displaying the current phase of the moon in [Home Assistant](htt
 Install moon-card by copying `moon.js` and `images` from this repo to `<config directory>/www/moon-phases` on your Home Assistant instance.
 
 #### Step 2
-Link rmv-card inside you ui-lovelace.yaml.
+Link `moon-card` inside your ui-lovelace.yaml.
 
     resources:
     - url: /local/moon-phases/moon.js
-      type: js
+      type: module
 
 ---
 ## Config
