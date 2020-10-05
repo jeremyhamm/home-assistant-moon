@@ -77,7 +77,7 @@ const getMoonPhase = (year, month, day) => {
     if ( b >= 8 ) {
         b = 0; //0 and 8 are the same so turn 8 into 0
     }
-    
+
     return normalizeMoonPhase(b);
 }
 
@@ -91,21 +91,57 @@ class MoonPhasesCard extends HTMLElement {
             const now = new Date();
             const year = now.getFullYear();
             const month = now.getMonth() + 1;
-            const day = now.getDay();
+            const day = now.getDate();
             const phase = getMoonPhase(year, month, day);
             
             console.log(`Current phase - ${phase.name} 🌙`);
             
             // Render card
             const card = document.createElement('ha-card');
-            card.header = phase.name;
             this.content = document.createElement('div');
             this.content.style.padding = '0 16px 16px';
             card.appendChild(this.content);
             this.appendChild(card);
             
+            // Styles
+            let style = document.createElement("style");
+            style.textContent = `
+                ha-card {
+                    background-color: #39006c;
+                    color: #FAFAFA;
+                }
+                .header {
+                    display: flex;
+                    justify-content: space-between;
+                    padding: 1em 0;
+                    font-weight: bold;
+                }
+                .title, .date {
+                    font-size: 1em;
+                }
+                .content {
+                    display: flex;
+                    align-items: center;
+                    justify-content: center;
+                    padding-top: 1em;
+                    font-weight: bold;
+                }
+                .img, .name {
+                    padding: 0 1em;
+                }
+            `;
+            card.appendChild(style);
+            
+            // DOM
             this.content.innerHTML = `
-                <img src="/local/moon-phases/images/${phase.id}.png">
+                <div class="header">
+                    <div class="title">CURRENT PHASE</div>
+                    <div class="date">${month}/${day}/${year}</div>
+                </div>
+                <div class="content">
+                    <img src="/local/moon-phases/images/${phase.id}.png" class="img">
+                    <span class="name">${phase.name}</span>
+                </div>
             `;
         }
     }
