@@ -7,7 +7,6 @@ Custom card for displaying the current phase of the moon in [Home Assistant](htt
 #### When sun is below horizon
 ![Night example](/example/moon-night-example.png)
 
----
 ## Installation
 
 #### Step 1
@@ -20,7 +19,6 @@ Link `moon-card` inside your ui-lovelace.yaml.
     - url: /local/moon-phases/moon.js
       type: module
 
----
 ## Config
 Name | Type | Default | Description
 ------------ | ------------- | ------------- | -------------
