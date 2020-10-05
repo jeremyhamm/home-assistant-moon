@@ -97,17 +97,20 @@ class MoonPhasesCard extends HTMLElement {
             console.log(`Current phase - ${phase.name} 🌙`);
             
             // Render card
-            const card = document.createElement('ha-card');
+            let card = document.createElement('ha-card');
             this.content = document.createElement('div');
             this.content.style.padding = '0 16px 16px';
             card.appendChild(this.content);
             this.appendChild(card);
             
+            // Sun entity
+            const entityId = this.config.entity;
+            const state = hass.states[entityId];
+            
             // Styles
             let style = document.createElement("style");
             style.textContent = `
                 ha-card {
-                    background-color: #39006c;
                     color: #FAFAFA;
                 }
                 .header {
@@ -131,6 +134,10 @@ class MoonPhasesCard extends HTMLElement {
                 }
             `;
             card.appendChild(style);
+            
+            // Toggle background based on sun above/below horizon
+            const backgroundColor = (state.state === 'above_horizon' ? '#87CEFA' : '#39006c');
+            card.style['background-color'] = backgroundColor;
             
             // DOM
             this.content.innerHTML = `
