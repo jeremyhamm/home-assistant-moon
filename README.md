@@ -1,4 +1,7 @@
 # Home Assistant Moon 🌙
+
+[![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
+
 Custom card for displaying the current phase of the moon in [Home Assistant](https://www.home-assistant.io). This card uses the [Sun Entity](https://www.home-assistant.io/integrations/sun/) to determine the background color of the card.
 
 #### When sun is above horizon
