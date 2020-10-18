@@ -29,11 +29,11 @@ Link `moon-card` inside your ui-lovelace.yaml.
       type: module
 
 ## Config
-Name | Type | Default | Description
+Name | Type | Default | Reference | Description
 ------------ | ------------- | ------------- | -------------
-type | string | **Required** | `custom:moon-phases`
-entity | string | **Required** | `sensor.moon`
-entity | string | Optional | `sun.sun` include if you would like the card to use light mode while sun is up
+type | string | **Required** | `custom:moon-phases` | Card reference
+entity | string | **Required** | `sensor.moon` | Moon entity
+entity | string | Optional | `sun.sun` | Include if you would like the card to use light mode while sun is up
 
 #### Example
     type: 'custom:moon-phases'
