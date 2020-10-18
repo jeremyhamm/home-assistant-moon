@@ -13,9 +13,15 @@ Custom card for displaying the current phase of the moon in [Home Assistant](htt
 ## Installation
 
 #### Step 1
-Install moon-card by copying `moon.js` and `images` from this repo to `<config directory>/www/moon-phases` on your Home Assistant instance.
+Enable the [moon integration](https://www.home-assistant.io/integrations/moon/) by adding the following to `configuration.yaml`:
+    
+    sensor:
+    - platform: moon
 
 #### Step 2
+Install moon-card by copying `moon.js` and `images` from this repo to `<config directory>/www/moon-phases` on your Home Assistant instance.
+
+#### Step 3
 Link `moon-card` inside your ui-lovelace.yaml.
 
     resources:
@@ -26,8 +32,11 @@ Link `moon-card` inside your ui-lovelace.yaml.
 Name | Type | Default | Description
 ------------ | ------------- | ------------- | -------------
 type | string | **Required** | `custom:moon-phases`
-entity | string | **Required** | `sun.sun`
+entity | string | **Required** | `sensor.moon`
+entity | string | Optional | `sun.sun`
 
 #### Example
     type: 'custom:moon-phases'
-    entity: sun.sun
+    entities: 
+    - sensor.moon
+    - sun.sun
