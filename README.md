@@ -33,7 +33,7 @@ Name | Type | Default | Description
 ------------ | ------------- | ------------- | -------------
 type | string | **Required** | `custom:moon-phases`
 entity | string | **Required** | `sensor.moon`
-entity | string | Optional | `sun.sun`
+entity | string | Optional | `sun.sun` include if you would like the card to use light mode while sun is up
 
 #### Example
     type: 'custom:moon-phases'
