@@ -2,7 +2,7 @@
 
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
 
-Custom card for displaying the current phase of the moon in [Home Assistant](https://www.home-assistant.io). This card uses the [Sun Entity](https://www.home-assistant.io/integrations/sun/) to determine the background color of the card.
+Custom card for displaying the current phase of the moon in [Home Assistant](https://www.home-assistant.io) using the [moon integration](https://www.home-assistant.io/integrations/moon/). This card also (optionally) uses the [Sun Entity](https://www.home-assistant.io/integrations/sun/) to determine the background color of the card.
 
 #### When sun is above horizon
 ![Day example](/example/moon-day-example.png)
@@ -29,11 +29,11 @@ Link `moon-card` inside your ui-lovelace.yaml.
       type: module
 
 ## Config
-Name | Type | Default | Description
------------- | ------------- | ------------- | -------------
-type | string | **Required** | `custom:moon-phases`
-entity | string | **Required** | `sensor.moon`
-entity | string | Optional | `sun.sun`
+Name | Type | Default | Reference | Description
+------------ | ------------- | ------------- | ------------- | -------------
+type | string | **Required** | `custom:moon-phases` | Card reference
+entity | string | **Required** | `sensor.moon` | Moon entity
+entity | string | Optional | `sun.sun` | Include if you would like the card to use light mode while sun is up
 
 #### Example
     type: 'custom:moon-phases'

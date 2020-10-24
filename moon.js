@@ -7,7 +7,7 @@
  */
 const getMoonPhase = (phase) => {
     switch(phase) {
-        case 'new':
+        case 'new_moon':
             return  'New Moon';
         case 'waxing_crescent':
             return 'Waxing Crescent Moon';
@@ -15,7 +15,7 @@ const getMoonPhase = (phase) => {
             return 'First Quarter Moon';
         case 'waxing_gibbous':
             return 'Waxing Gibbous Moon';
-        case 'full':
+        case 'full_moon':
             return 'Full Moon';
         case 'waning_gibbous':
             return 'Waning Gibbous Moon';
