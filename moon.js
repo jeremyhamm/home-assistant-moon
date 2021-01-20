@@ -100,6 +100,10 @@ class MoonPhasesCard extends HTMLElement {
                     padding-top: 1em;
                     font-weight: bold;
                 }
+                .content a {
+                    color: #FAFAFA;
+                    text-decoration: none;
+                }
                 .img, .name {
                     padding: 0 1em;
                 }
