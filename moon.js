@@ -8,21 +8,45 @@
 const getMoonPhase = (phase) => {
     switch(phase) {
         case 'new_moon':
-            return  'New Moon';
+            return  {
+                name: 'New Moon',
+                link: 'https://www.timeanddate.com/astronomy/moon/new-moon.html'
+            };
         case 'waxing_crescent':
-            return 'Waxing Crescent Moon';
+            return {
+                name: 'Waxing Crescent Moon',
+                link: 'https://www.timeanddate.com/astronomy/moon/waxing-crescent.html'
+            };
         case 'first_quarter':
-            return 'First Quarter Moon';
+            return {
+                name: 'First Quarter Moon',
+                link: 'https://www.timeanddate.com/astronomy/moon/first-quarter.html'
+            };
         case 'waxing_gibbous':
-            return 'Waxing Gibbous Moon';
+            return {
+                name: 'Waxing Gibbous Moon',
+                link: 'https://www.timeanddate.com/astronomy/moon/waxing-gibbous.html'
+            };
         case 'full_moon':
-            return 'Full Moon';
+            return {
+                name: 'Full Moon',
+                link: 'https://www.timeanddate.com/astronomy/moon/full-moon.html'
+            };
         case 'waning_gibbous':
-            return 'Waning Gibbous Moon';
+            return {
+                name: 'Waning Gibbous Moon',
+                link: 'https://www.timeanddate.com/astronomy/moon/waning-gibbous.html'
+            };
         case 'last_quarter':
-            return 'Last Quarter Moon';
+            return {
+                name: 'Last Quarter Moon',
+                link: 'https://www.timeanddate.com/astronomy/moon/third-quarter.html'
+            };
         case 'waning_crescent':
-            return 'Waning Crescent Moon';
+            return {
+                name: 'Waning Crescent Moon',
+                link: 'https://www.timeanddate.com/astronomy/moon/waning-crescent.html'
+            };
     }
 }
 
@@ -93,8 +117,8 @@ class MoonPhasesCard extends HTMLElement {
                     <div class="date">${month}/${day}/${year}</div>
                 </div>
                 <div class="content">
-                    <img src="/local/moon-phases/images/${phase}.png" class="img">
-                    <span class="name">${phase}</span>
+                    <img src="/local/moon-phases/images/${phase.name}.png" class="img">
+                    <span class="name"><a href="${phase.link}" target="_blank">${phase.name}</a></span>
                 </div>
             `;
         }
