@@ -121,7 +121,7 @@ class MoonPhasesCard extends HTMLElement {
                     <div class="date">${month}/${day}/${year}</div>
                 </div>
                 <div class="content">
-                    <img src="/local/moon-phases/images/${phase.name}.png" class="img">
+                    <img src="/hacsfiles/moon-phases/images/${phase.name}.png" class="img">
                     <span class="name"><a href="${phase.link}" target="_blank">${phase.name}</a></span>
                 </div>
             `;
